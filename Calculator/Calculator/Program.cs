@@ -10,20 +10,38 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter Floor Width");
-            string userInputWidth = Console.ReadLine();
-            int NewUserInputWidth = Convert.ToInt32(userInputWidth);
+            int globalArea = 0;
+            while (true)
+            { 
+                Console.WriteLine("Enter Floor Width");
+                string userInputWidth = Console.ReadLine();
+                int NewUserInputWidth = Convert.ToInt32(userInputWidth);
 
-            Console.WriteLine("Enter Floor Lenght");
-            string userInputLenght = Console.ReadLine();
-            int NewUserInputLenght = Convert.ToInt32(userInputLenght);
+                Console.WriteLine("Enter Floor Lenght");
+                string userInputLenght = Console.ReadLine();
+                int NewUserInputLenght = Convert.ToInt32(userInputLenght);
+                int squareMeters = NewUserInputWidth * NewUserInputLenght;
 
-            Console.WriteLine("Enter Cost per Unit");
-            string userInputCost = Console.ReadLine();
-            int NewUserInputCost = Convert.ToInt32(userInputCost);
+                globalArea += squareMeters;
+                Console.WriteLine("Is there any more Area to cover? 'Yes' to add");
+                string answer = Console.ReadLine();
+                if (answer != "Yes")
+                {
+                    break;
+                }
+            }
 
-            int squareMeters = NewUserInputWidth * NewUserInputLenght;
-            int CostOfFlooring = squareMeters * NewUserInputCost;
+            decimal costPerSqmt = 86.00m / 20.00m;
+            decimal CostOfFlooring = globalArea * costPerSqmt;
+
+
+            //Console.WriteLine("Enter Cost per Unit");
+            //string userInputCost = Console.ReadLine();
+            //int NewUserInputCost = Convert.ToInt32(userInputCost);
+
+            //int CostOfFlooring = globalArea * NewUserInputCost;
+
+
 
             Console.WriteLine(CostOfFlooring);
             Console.ReadLine();
