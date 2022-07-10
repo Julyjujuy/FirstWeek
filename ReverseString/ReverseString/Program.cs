@@ -10,6 +10,18 @@ namespace ReverseString
     {
         static void Main(string[] args)
         {
+            //read the string
+            Console.WriteLine("Enter String to Reverse Please");
+            string s = Console.ReadLine();
+            //convert string to array
+            char[] chars = s.ToCharArray();
+            //Reverse Array
+            Array.Reverse(chars);
+            //Display Result
+            Console.WriteLine(chars);
+            //Pause
+            Console.ReadLine();
+
         }
     }
 }
