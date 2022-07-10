@@ -18,6 +18,23 @@ namespace NumberGame
 
         }
 
+        static void Checknumber(int guess, int randomnumber)
+        {
+            if (guess < randomnumber)
+            {
+                Console.WriteLine("You are too low");
+            }
+            if (guess > randomnumber)
+            {
+                Console.WriteLine("You are too high");
+
+            }
+            if (guess == randomnumber)
+            {
+                Console.WriteLine("You win!");
+
+            }
+        }
         static void Main(string[] args)
         {
             //Print Small Introduction with Rules
@@ -25,10 +42,16 @@ namespace NumberGame
 
             //Generate a random number
             var randomnumber = Generatenumber(1, 100);            
-            //startloop
+
             //Ask user to guess the number
+            Console.WriteLine("Please Guess the Number I thought");
+
+            string userInput = Console.ReadLine();
+            int guess = Convert.ToInt32(userInput);
             //Check user input
+           Checknumber(guess, randomnumber);
             //display Answer
+
             //End loop if user Wins
             Console.ReadLine(); 
 
