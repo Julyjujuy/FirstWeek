@@ -33,7 +33,6 @@ namespace ReverseStringImproved
             }
             Console.WriteLine("Reverse  String  Is  {0}", Revstr); 
            
-
             Console.ReadLine();  
            
 
